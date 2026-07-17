@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MailOra
 
 **Connects to your inbox, automatically detects job/internship/hackathon emails with AI, and sends WhatsApp reminders before every deadline.**
@@ -273,3 +274,6 @@ Roadmap _(TODO: confirm/prune to match your actual plans)_:
 ---
 
 > _Built as a full-stack project demonstrating an event-driven microservice architecture: AI integration, message queuing with DLQs, OAuth, and containerized multi-service deployment._
+=======
+# Mailora_
+>>>>>>> cd15570dba6001b2d37e900c6dca1dd5a2c0b430
