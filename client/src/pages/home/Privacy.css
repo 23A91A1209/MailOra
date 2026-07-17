@@ -1,0 +1,171 @@
+#root{
+width:100%;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body{
+font-family: "Segoe UI", sans-serif;
+background:#f5f6f8;
+}
+
+/* HERO */
+
+.privacy-hero {
+  width: 100%;
+  background: linear-gradient(90deg,#0f2942,#183b60);
+  color: white;
+  padding: 80px 0;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.breadcrumb{
+font-size:14px;
+opacity:0.8;
+margin-bottom:15px;
+}
+
+.privacy-hero h1{
+font-size:48px;
+font-weight:600;
+margin:0;
+}
+
+/* CONTENT */
+
+/* .privacy-container{
+background:white;
+width:900px;
+margin:-40px auto 60px auto;
+padding:50px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+line-height:1.8;
+color:#333;
+} */
+
+.privacy-container{
+  width:100%;
+  max-width:1000px;
+  margin:40px auto;
+  padding:50px;
+  background:white;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  line-height:1.8;
+  box-sizing:border-box;
+  color:black
+}
+.intro{
+font-size:16px;
+margin-bottom:25px;
+}
+
+h2{
+margin-top:40px;
+color:#1c3553;
+font-weight:600;
+}
+
+ul{
+margin-top:10px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:6px;
+}
+
+.contact{
+font-weight:600;
+color:#1c3553;
+}
+/* =========================
+   TABLET (1024px and below)
+   ========================= */
+
+@media (max-width:1024px){
+
+.hero-content{
+padding:0 30px;
+}
+
+.privacy-hero h1{
+font-size:40px;
+}
+
+.privacy-container{
+max-width:90%;
+padding:40px;
+}
+
+}
+
+
+/* =========================
+   MOBILE (768px and below)
+   ========================= */
+
+@media (max-width:768px){
+
+.hero-content{
+padding:0 20px;
+}
+
+.privacy-hero{
+padding:60px 0;
+}
+
+.privacy-hero h1{
+font-size:32px;
+}
+
+.privacy-container{
+max-width:92%;
+padding:30px;
+margin:30px auto;
+}
+
+h2{
+font-size:22px;
+}
+
+}
+
+
+/* =========================
+   SMALL MOBILE (480px)
+   ========================= */
+
+@media (max-width:480px){
+
+.hero-content{
+padding:0 16px;
+}
+
+.privacy-hero h1{
+font-size:26px;
+}
+
+.breadcrumb{
+font-size:12px;
+}
+
+.privacy-container{
+padding:25px;
+}
+
+.intro{
+font-size:15px;
+}
+
+li{
+font-size:14px;
+}
+
+}

@@ -1,0 +1,366 @@
+/* =====================================================
+   AUTH FLOW STYLES — LeetCode-Inspired
+   (Forgot Password, OTP Verification, Change Password)
+   ===================================================== */
+
+/* ─── Container ─── */
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+body.dark-theme .auth-container {
+  background: radial-gradient(ellipse at 20% 50%, #1f1f3a 0%, #1a1a2e 50%, #0d0d1a 100%);
+}
+
+body.light-theme .auth-container {
+  background: linear-gradient(135deg, #f0f0f5 0%, #e8e8f0 50%, #f5f5fa 100%);
+}
+
+/* ─── Card ─── */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 12px;
+  animation: cardEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark-theme .auth-card {
+  background: #282828;
+  border: 1px solid #3e3e3e;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+body.light-theme .auth-card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Title ─── */
+.auth-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
+
+body.dark-theme .auth-title {
+  color: #eff1f6;
+}
+
+body.light-theme .auth-title {
+  color: #262626;
+}
+
+/* ─── Input ─── */
+.auth-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+body.dark-theme .auth-input {
+  background: #333333;
+  border: 1px solid #3e3e3e;
+  color: #eff1f6;
+}
+
+body.dark-theme .auth-input::placeholder {
+  color: #6b6b6b;
+}
+
+body.light-theme .auth-input {
+  background: #f7f8fa;
+  border: 1px solid #e2e2e2;
+  color: #262626;
+}
+
+body.light-theme .auth-input::placeholder {
+  color: #a0a0a0;
+}
+
+.auth-input:focus {
+  border-color: #ffa116;
+  box-shadow: 0 0 0 3px rgba(255, 161, 22, 0.15);
+}
+
+body.dark-theme .auth-input:focus {
+  background: #3a3a3a;
+}
+
+body.light-theme .auth-input:focus {
+  background: #ffffff;
+}
+
+/* ─── Button ─── */
+.auth-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffa116, #e8920e);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 4px;
+  letter-spacing: 0.2px;
+}
+
+.auth-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 161, 22, 0.35);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+.auth-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Message ─── */
+.msg {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+body.dark-theme .msg {
+  color: #eff1f6;
+}
+
+body.light-theme .msg {
+  color: #262626;
+}
+
+/* ─── OTP Container ─── */
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.otp-box {
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+body.dark-theme .otp-box {
+  background: #333333;
+  border: 1px solid #3e3e3e;
+  color: #eff1f6;
+}
+
+body.light-theme .otp-box {
+  background: #f7f8fa;
+  border: 1px solid #e2e2e2;
+  color: #262626;
+}
+
+.otp-box:focus {
+  border-color: #ffa116;
+  box-shadow: 0 0 0 3px rgba(255, 161, 22, 0.15);
+  transform: scale(1.05);
+}
+
+body.dark-theme .otp-box:focus {
+  background: #3a3a3a;
+}
+
+body.light-theme .otp-box:focus {
+  background: #ffffff;
+}
+
+/* ─── OTP Text ─── */
+.otp-text {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+body.dark-theme .otp-text {
+  color: #8a8a8a;
+}
+
+body.light-theme .otp-text {
+  color: #6b7280;
+}
+
+/* ─── Resend ─── */
+.resend {
+  text-align: center;
+  margin-top: 16px;
+  color: #ffa116;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.resend:hover {
+  opacity: 0.7;
+}
+
+/* ─── Password Eye ─── */
+.password-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+body.dark-theme .eye-icon {
+  color: #6b6b6b;
+}
+
+body.light-theme .eye-icon {
+  color: #a0a0a0;
+}
+
+.eye-icon:hover {
+  color: #ffa116;
+}
+
+/* ─── OTP Sliding Panel ─── */
+.otp-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 440px;
+  max-width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px 0 0 20px;
+  z-index: 10;
+}
+
+body.dark-theme .otp-panel {
+  background: #282828;
+  border-left: 1px solid #3e3e3e;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.4);
+}
+
+body.light-theme .otp-panel {
+  background: #ffffff;
+  border-left: 1px solid #e2e2e2;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Auth Left Illustration ─── */
+.auth-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-left img {
+  width: 65%;
+  max-width: 420px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* ─── Animations ─── */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidePanel {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .otp-panel {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .auth-left {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-card {
+    padding: 28px 18px;
+  }
+
+  .otp-box {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .otp-container {
+    gap: 8px;
+  }
+}
